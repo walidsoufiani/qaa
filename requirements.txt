@@ -4,3 +4,5 @@ langchain
 env
 openai
 tiktoken
+faiss-cpu
+
