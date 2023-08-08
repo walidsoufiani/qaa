@@ -101,7 +101,7 @@ if openai_api_key:
 
 
     # Define a directory path for saving JSON files
-    json_dir = "/content/json_files"  # Change this path to your desired directory on Google Colab
+    json_dir = "json_files"  # Change this path to your desired directory on Google Colab
 
     # Ensure the directory exists
     if not os.path.exists(json_dir):
