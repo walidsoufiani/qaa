@@ -5,4 +5,5 @@ env
 openai
 tiktoken
 faiss-cpu
+reader
 
