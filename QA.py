@@ -10,6 +10,8 @@ import json
 import os
 import requests
 import base64
+from PIL import Image
+
 
 st.title("OpenAI Application")
 
