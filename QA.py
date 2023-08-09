@@ -69,7 +69,7 @@ if openai_api_key:
         
         query = "Give me only the number of weight of this model without unit "
         docs = docsearch.similarity_search(query)
-        weight = float(chain.run(input_documents=docs, question=query))
+        weight = chain.run(input_documents=docs, question=query)
         composante_weight["Value"]=weight
         
         query = "Give me only the unit of weight "
@@ -84,7 +84,7 @@ if openai_api_key:
         
         query = "Give me only the number of the output current without unit"
         docs = docsearch.similarity_search(query)
-        output_current = float(chain.run(input_documents=docs, question=query))
+        output_current = chain.run(input_documents=docs, question=query)
         composant_output_current["Value"]= output_current
         
         query = "Give me only the symbole unit of the output current"
@@ -109,11 +109,11 @@ if openai_api_key:
         
         query = "Give me  the integer response of the minimum operation temperature without including the unit symbole "
         docs = docsearch.similarity_search(query)
-        minimum = float(chain.run(input_documents=docs, question=query))
+        minimum = chain.run(input_documents=docs, question=query)
         
         query = "Give me  the integer response of the maximum operation temperature without including the unit symbole"
         docs = docsearch.similarity_search(query)
-        maximum = float(chain.run(input_documents=docs, question=query))
+        maximum = chain.run(input_documents=docs, question=query)
         
         query = "Give me only the symbole of the unit of the operation temperature"
         docs = docsearch.similarity_search(query)
@@ -169,18 +169,18 @@ if openai_api_key:
             col1,col2,col3 = st.columns([3,2,1])
             with col1:
               st.markdown('<span style="color: orange; font-weight: bold;">Temperature</span>', unsafe_allow_html=True)
-              placeholder3 = st.number_input(':blue[Maximum operation Temperature]', value=operation_temperature["Maximum"])
-              placeholder4 = st.number_input(':blue[Minimum operation Temperature]', value=operation_temperature['Minimum'])
+              placeholder3 = st.text_input(':blue[Maximum operation Temperature]', value=operation_temperature["Maximum"])
+              placeholder4 = st.text_input(':blue[Minimum operation Temperature]', value=operation_temperature['Minimum'])
               placeholder5 = st.text_input(':blue[Units]', value=operation_temperature['Units'])
 
             with col3:
               st.markdown('<span style="color: orange; font-weight: bold;">Weight</span>', unsafe_allow_html=True)
-              placeholder6 = st.number_input(':blue[Weight]', value=composante_weight["Value"])
+              placeholder6 = st.text_input(':blue[Weight]', value=composante_weight["Value"])
               placeholder7 = st.text_input(':blue[Weight Units]', value=composante_weight['Units'])
         
             with col2:
               st.markdown('<span style="color: orange; font-weight: bold;">Current</span>', unsafe_allow_html=True)
-              placeholder9 = st.number_input(':blue[Output current]', value=composant_output_current["Value"])
+              placeholder9 = st.text_input(':blue[Output current]', value=composant_output_current["Value"])
               placeholder10 = st.text_input(':blue[Output current Units]', value=composant_output_current['Units'])
               placeholder8 = st.text_input(':blue[Direction]', value=composant_direction["Value"])
 
