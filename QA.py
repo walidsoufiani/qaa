@@ -151,7 +151,7 @@ if openai_api_key:
       
 
             with col2:
-              image = Image.open('/content/MFG_LC78_12-0.5.jpg')
+              image = Image.open('exemple_image/LC.jpg')
               st.image(image, caption='LC')
               # Important
 
