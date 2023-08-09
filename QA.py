@@ -153,9 +153,12 @@ if openai_api_key:
       
 
             with col2:
-              image = Image.open('qaa/exemple_image/LC.jpg', 'rb')
-              st.image(image, caption='LC')
-              # Important
+
+              logo_path = 'exemple_image/LC.jpg'
+              if os.path.exists(logo_path):
+                  image = Image.open(logo_path)
+                  st.image(image, caption='LC')
+                  # Important
 
             submit_button_1 = st.form_submit_button(label='Save_1')
             if submit_button_1:
