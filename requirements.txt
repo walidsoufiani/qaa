@@ -6,4 +6,6 @@ openai
 tiktoken
 faiss-cpu
 reader
+Pillow==9.3.0
+
 
